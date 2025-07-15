@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sustainable Innovation Portal - Multi-Page Website</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="chatInlineRoot-b07564"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Load chatbot script immediately and ensure it loads
+      (function() {
+        // Check if script already exists
+        if (document.querySelector('script[src*="agentx-chat.js"]')) {
+          return;
+        }
+        
+        const script = document.createElement('script');
+        script.src = 'https://storage.googleapis.com/agentx-cdn-01/agentx-chat.js?agx=68714ead2d16855385b07564Mnk%2FktSfu4k7w92ZrD9rhQ%3D%3D%7CwO2dZZr6Mf%2FPDEWttfXVvPTSDNQB9jqc6oe2RYm%2BpKE%3D';
+        script.async = true;
+        script.onload = function() {
+          console.log('AgentX chatbot loaded successfully');
+        };
+        script.onerror = function() {
+          console.error('Failed to load AgentX chatbot');
+          // Retry after 2 seconds
+          setTimeout(function() {
+            const retryScript = document.createElement('script');
+            retryScript.src = 'https://storage.googleapis.com/agentx-cdn-01/agentx-chat.js?agx=68714ead2d16855385b07564Mnk%2FktSfu4k7w92ZrD9rhQ%3D%3D%7CwO2dZZr6Mf%2FPDEWttfXVvPTSDNQB9jqc6oe2RYm%2BpKE%3D';
+            retryScript.async = true;
+            document.head.appendChild(retryScript);
+          }, 2000);
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>
